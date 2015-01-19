@@ -1,0 +1,30 @@
+{
+    "name": "yii-dream-team/yii2-perfect-money",
+    "description": "PerfectMoney component for Yii2",
+    "type": "yii2-extension",
+    "license": "MIT",
+	"keywords": ["yii2", "billing", "payment", "perfectmoney"],
+    "homepage": "http://yiidreamteam.com/yii2/perfect-money",
+    "authors": [
+        {
+            "name": "Alexey Samoylov",
+            "email": "alexey.samoylov@gmail.com",
+            "homepage": "http://yiidreamteam.com/team/alexey",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/yii-dream-team/yii2-perfect-money/issues",
+        "source": "https://github.com/yii-dream-team/yii2-perfect-money"
+    },
+    "minimum-stability": "dev",
+    "require": {
+        "php":">=5.4.0",
+		"yiisoft/yii2": "~2"
+    },
+    "autoload": {
+        "psr-4": {
+            "yiidreamteam\\perfectmoney\\": "./src"
+        }
+    }
+}
