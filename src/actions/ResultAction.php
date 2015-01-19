@@ -24,9 +24,6 @@ class ResultAction extends Action
      */
     public function init()
     {
-        assert(isset($this->componentName));
-        assert(isset($this->redirectUrl));
-
         $this->api = \Yii::$app->get($this->componentName);
         if (!$this->api instanceof Api)
             throw new InvalidConfigException('Invalid PerfectMoney component configuration');
