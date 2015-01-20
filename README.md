@@ -20,10 +20,26 @@ to the `require` section of your composer.json.
 
 TBD
 
-### Gateway Controller ###
+
+### Component configuration ###
+
+    'pm' => [
+        'accountId' => '1234567',
+        'accountPassword' => 'xxxxxxxxx',
+        'walletNumber' => 'U1234567',
+        'hash' => '827CCB0EEA8A706C4C34A16891F84E7B',
+        'resultUrl' => ['/perfect-money/result'],
+        'successUrl' => ['/site/payment-success'],
+        'failureUrl' => ['/site/payment-failure'],
+    ],
+
+### Gateway controller ###
+
+You will need to create controller that will handle result requests from PerfectMoney service.
+Sample controller code:
 
     <?php
-    namespace frontend\modules\gateway\controllers;
+    namespace frontend\controllers;
     
     use common\models\Invoice;
     use yii\base\Event;
