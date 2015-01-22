@@ -26,7 +26,8 @@ Configure `pm` component in the `components` section of your application.
         'accountId' => '1234567',
         'accountPassword' => 'xxxxxxxxx',
         'walletNumber' => 'U1234567',
-        'hash' => '827CCB0EEA8A706C4C34A16891F84E7B',
+        // Hash value is strtoupper(md5('your_password'))
+        'hash' => '827CCB0EEA8A706C4C34A16891F84E7B', 
         'resultUrl' => ['/perfect-money/result'],
         'successUrl' => ['/site/payment-success'],
         'failureUrl' => ['/site/payment-failure'],
