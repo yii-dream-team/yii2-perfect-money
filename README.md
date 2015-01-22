@@ -18,10 +18,9 @@ to the `require` section of your composer.json.
 
 ## Usage ##
 
-TBD
-
-
 ### Component configuration ###
+
+Configure `pm` component in the `components` section of your application.
 
     'pm' => [
         'accountId' => '1234567',
@@ -32,6 +31,18 @@ TBD
         'successUrl' => ['/site/payment-success'],
         'failureUrl' => ['/site/payment-failure'],
     ],
+    
+### Redirecting to the payment system ###
+
+To redirect user to PerfectMoney site you need to create the page with RedirectForm widget.
+User will redirected right after page load.
+
+    <?php echo \yiidreamteam\perfectmoney\RedirectForm::widget([
+        'api' => Yii::$app->get('pm'),
+        'invoiceId' => $invoice->id,
+        'amount' => $invoice->amount,
+        'description' => $invoice->description,
+    ]); ?>
 
 ### Gateway controller ###
 
