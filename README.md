@@ -23,6 +23,7 @@ to the `require` section of your composer.json.
 Configure `pm` component in the `components` section of your application.
 
     'pm' => [
+        'class' => '\yiidreamteam\perfectmoney\Api',
         'accountId' => '1234567',
         'accountPassword' => 'xxxxxxxxx',
         'walletNumber' => 'U1234567',
