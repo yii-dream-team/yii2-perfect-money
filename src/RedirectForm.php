@@ -6,6 +6,7 @@
 namespace yiidreamteam\perfectmoney;
 
 use yii\bootstrap\Widget;
+use yii\web\View;
 
 class RedirectForm extends Widget
 {
@@ -24,6 +25,7 @@ class RedirectForm extends Widget
 
     public function run()
     {
+        $this->view->registerJs("$('#perfect-money-checkout-form').submit();", View::POS_READY);
         return $this->render('redirect', [
             'api' => $this->api,
             'invoiceId' => $this->invoiceId,

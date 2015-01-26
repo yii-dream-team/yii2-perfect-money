@@ -25,9 +25,3 @@
         <input type="hidden" name="SUGGESTED_MEMO" value="<?= $description ?>">
     </form>
 </div>
-
-<script>
-    $(document).ready(function () {
-        $('#perfect-money-checkout-form').submit();
-    });
-</script>
