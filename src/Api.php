@@ -22,10 +22,12 @@ class Api extends \yii\base\Component
     public $walletNumber;
     /** @var string Wallet currency (e.g. USD) */
     public $walletCurrency = 'USD';
-    /** @var string Hashed alternate passphrase (strtoupper(md5('your_passphrase'))) */
-    public $hash;
+    /** @var string Secret string from the PM settings page */
+    public $alternateSecret;
     /** @var string Merchant name to display in payment form */
     public $merchantName;
+
+    protected $hash;
 
     public $resultUrl;
     public $successUrl;
@@ -33,9 +35,17 @@ class Api extends \yii\base\Component
 
     public function init()
     {
+        assert(isset($this->accountId));
+        assert(isset($this->accountPassword));
+        assert(isset($this->walletNumber));
+        assert(isset($this->alternateSecret));
+        assert(isset($this->merchantName));
+
         $this->resultUrl = Url::to($this->resultUrl, true);
         $this->successUrl = Url::to($this->successUrl, true);
         $this->failureUrl = Url::to($this->failureUrl, true);
+
+        $this->hash = strtoupper(md5($this->alternateSecret));
     }
 
     /**
@@ -173,7 +183,7 @@ class Api extends \yii\base\Component
         if ($hash == $data['V2_HASH'])
             return true;
 
-        \Yii::trace('Hash check failed: ' . VarDumper::dumpAsString($params), 'PerfectMoney');
+        \Yii::error('Hash check failed: ' . VarDumper::dumpAsString($params), 'PerfectMoney');
         return false;
     }
 }
