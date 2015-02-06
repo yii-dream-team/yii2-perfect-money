@@ -8,11 +8,11 @@ The preferred way to install this extension is through [composer](http://getcomp
 
 Either run
 
-    php composer.phar require --prefer-dist yii-dream-team/yii2-perfect-money "*"
+    php composer.phar require --prefer-dist yii-dream-team/yii2-perfect-money "dev-master"
 
 or add
 
-    "yii-dream-team/yii2-perfect-money": "*"
+    "yii-dream-team/yii2-perfect-money": "dev-master"
 
 to the `require` section of your composer.json.
 
