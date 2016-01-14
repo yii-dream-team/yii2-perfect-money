@@ -7,10 +7,11 @@
  * @var $invoiceId
  * @var $amount
  * @var $description
+ * @var $redirectMessage string
  */
 ?>
 <div class="perfect-money-checkout">
-    <p><?= \Yii::t('PerfectMoney', 'Now you will be redirected to the payment system.') ?></p>
+    <p><?= $message ?></p>
     <form id="perfect-money-checkout-form" action="https://perfectmoney.is/api/step1.asp" method="POST">
         <input type="hidden" name="PAYEE_ACCOUNT" value="<?= $api->walletNumber ?>">
         <input type="hidden" name="PAYEE_NAME" value="<?= $api->merchantName ?>">
