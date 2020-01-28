@@ -12,7 +12,7 @@
 ?>
 <div class="perfect-money-checkout">
     <p><?= $message ?></p>
-    <form id="perfect-money-checkout-form" action="https://perfectmoney.is/api/step1.asp" method="POST">
+    <form id="perfect-money-checkout-form" action="https://perfectmoney.com/api/step1.asp" method="POST">
         <input type="hidden" name="PAYEE_ACCOUNT" value="<?= $api->walletNumber ?>">
         <input type="hidden" name="PAYEE_NAME" value="<?= $api->merchantName ?>">
         <input type="hidden" name="PAYMENT_UNITS" value="<?= $api->walletCurrency ?>">
